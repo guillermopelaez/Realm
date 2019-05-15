@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //realm = Realm.getDefaultInstance();
+        realm = Realm.getDefaultInstance();
 
         editname = (EditText) findViewById(R.id.editName);
         editage = (EditText) findViewById(R.id.editAge);
