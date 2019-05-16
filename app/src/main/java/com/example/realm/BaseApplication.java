@@ -10,7 +10,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
-        RealmConfiguration config = new RealmConfiguration.Builder().name("default.realm").schemaVersion(1).migration(new Migration()).build();
+        RealmConfiguration config = new RealmConfiguration.Builder().name(Realm.DEFAULT_REALM_NAME).schemaVersion(0).deleteRealmIfMigrationNeeded().build();
         Realm.setDefaultConfiguration(config);
     }
 }

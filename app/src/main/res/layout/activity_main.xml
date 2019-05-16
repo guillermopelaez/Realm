@@ -1,104 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="15dp"
+    android:background="@drawable/fondousuario1"
+    android:orientation="vertical"
+    android:paddingLeft="20dp">
 
     <EditText
+        android:padding="10dp"
         android:id="@+id/editName"
-        android:layout_width="321dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:hint="Edad"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAge" />
-
-    <EditText
-        android:id="@+id/editAge"
-        android:layout_width="316dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Nombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/bordes"
+        android:textColorHint="#ffff"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
+        android:padding="10dp"
+        android:id="@+id/editaEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:background="@drawable/bordes"
+        android:textColorHint="#ffff"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+    <EditText
+        android:padding="10dp"
+        android:id="@+id/editAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:textColorHint="#ffff"
+        android:hint="Edad"
+
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bordes"/>
+
+    <EditText
+        android:textColorHint="#ffff"
+        android:padding="10dp"
         android:id="@+id/editGenero"
-        android:layout_width="316dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
         android:hint="Genero"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
+        android:background="@drawable/bordes"
+        android:layout_weight="0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="8dp"
-        android:text="Add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editGenero" />
+        android:orientation="horizontal"
+        >
 
-    <Button
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="View"
-        app:layout_constraintEnd_toStartOf="@+id/delete"
-        app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toEndOf="@+id/add"
-        app:layout_constraintTop_toBottomOf="@+id/editGenero" />
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:text="Delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editGenero" />
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_persona"
+            android:text="  AÑADIR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editGenero" />
 
+        <Button
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" MOSTRAR"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_delete_24px"
+            android:text="  BORRAR"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="318dp"
-        android:layout_height="472dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="TextView"
+        android:textColor="#ffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

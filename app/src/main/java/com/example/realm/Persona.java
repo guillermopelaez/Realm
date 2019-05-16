@@ -1,12 +1,31 @@
 package com.example.realm;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Persona extends RealmObject {
+    @PrimaryKey
+    private int id;
     private String Name;
+    private String Email;
     private String Age;
     private String Genero;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
 
     public String getName() {
         return Name;
@@ -35,9 +54,11 @@ public class Persona extends RealmObject {
     @Override
     public String toString() {
         return "Persona{" +
-                "name='" + Name + '\'' +
-                ", age=" + Age +
-                ", genero='" + Genero + '\'' +
+                "id=" + id + '\n' +
+                " name= " + Name + '\n' +
+                " email= " + Email + '\n' +
+                " age= " + Age +
+                ", genero= '" + Genero + '\n' +
                 '}';
     }
 }

@@ -13,18 +13,23 @@ import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editname, editage, editGenero;
+    private EditText editname, editEmail, editage, editGenero;
     private Button add, view, delete;
     private TextView textView3;
     private Realm realm;
+    private Persona persona;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         realm = Realm.getDefaultInstance();
-
+        configView();
+    }
+    private void configView() {
+        persona = new Persona();
         editname = (EditText) findViewById(R.id.editName);
+        editEmail = (EditText) findViewById(R.id.editaEmail);
         editage = (EditText) findViewById(R.id.editAge);
         editGenero = (EditText) findViewById(R.id.editGenero);
         add = (Button) findViewById(R.id.add);
@@ -35,14 +40,21 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save_to_database(editname.getText().toString().trim(), editage.getText().toString().trim(), editGenero.getText().toString().trim());
-            }
+               persona.setName(editname.getText().toString());
+               persona.setEmail(editEmail.getText().toString());
+               persona.setAge(editage.getText().toString());
+               persona.setGenero(editGenero.getText().toString());
+               CrupPersona.addPersona(persona);
+                     }
         });
+
+
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 refresh_database();
+                CrupPersona.getAllPersona();
             }
         });
 
