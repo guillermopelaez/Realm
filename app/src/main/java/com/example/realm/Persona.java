@@ -6,10 +6,10 @@ import io.realm.annotations.PrimaryKey;
 public class Persona extends RealmObject {
     @PrimaryKey
     private int id;
-    private String Name;
-    private String Email;
-    private String Age;
-    private String Genero;
+    private String name;
+    private String email;
+    private String age;
+    private String genero;
 
     public int getId() {
         return id;
@@ -20,45 +20,45 @@ public class Persona extends RealmObject {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public String getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(String age) {
-        this.Age = age;
+        this.age = age;
     }
 
     public String getGenero() {
-        return Genero;
+        return genero;
     }
 
     public void setGenero(String genero) {
-        this.Genero = genero;
+        this.genero = genero;
     }
 
     @Override
     public String toString() {
         return "Persona{" +
                 "id=" + id + '\n' +
-                " name= " + Name + '\n' +
-                " email= " + Email + '\n' +
-                " age= " + Age +
-                ", genero= '" + Genero + '\n' +
+                " name= " + name + '\n' +
+                " email= " + email + '\n' +
+                " age= " + age + '\n' +
+                ", genero= '" + genero + '\n' +
                 '}';
     }
 }

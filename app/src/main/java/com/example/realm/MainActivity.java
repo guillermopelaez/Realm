@@ -61,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Name = editname.getText().toString();
-                delete_database(Name);
+               CrupPersona.deleteTodo();
             }
         });
 

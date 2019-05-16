@@ -29,10 +29,10 @@ public class CrupPersona {
             public void execute(Realm realm) {
                 int index = CrupPersona.calcularId();
                 Persona realmPersona = realm.createObject(Persona.class, index);
-                realmPersona.setEmail(persona.getName());
+                realmPersona.setName(persona.getName());
                 realmPersona.setEmail(persona.getEmail());
-                realmPersona.setEmail(persona.getAge());
-                realmPersona.setEmail(persona.getGenero());
+                realmPersona.setAge(persona.getAge());
+                realmPersona.setGenero(persona.getGenero());
             }
         });
     }
@@ -58,5 +58,16 @@ public class CrupPersona {
     }
         return persona;
     }
+
+    public final static void deleteTodo (){
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        RealmResults <Persona> personas = realm.where(Persona.class).findAll();
+    realm.deleteAll();
+    realm.commitTransaction();
+
+
+    }
+
 }
 
